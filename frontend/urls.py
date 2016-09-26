@@ -1,6 +1,8 @@
 from django.conf.urls import url
-from django.http.response import HttpResponseRedirect
+from django.http import HttpResponseRedirect
+from django.views.static import serve
 
 urlpatterns = [
-    url(r'^$', lambda request: HttpResponseRedirect('static/index.html')),
+    url(r'^$', lambda request: HttpResponseRedirect('index.html')),
+    url(r'^(?P<path>.*)$', serve, {'document_root': 'frontend/static'}),
 ]
