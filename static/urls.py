@@ -4,5 +4,5 @@ from django.views.static import serve
 
 urlpatterns = [
     url(r'^$', lambda request: HttpResponseRedirect('index.html')),
-    url(r'^(?P<path>.*)$', serve, {'document_root': 'frontend/static'}),
+    url(r'^(?P<path>.*)$', serve, {'document_root': 'static/files'}),
 ]

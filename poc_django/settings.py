@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'frontend.apps.FrontendConfig',
+    'static.apps.StaticConfig',
     'api.apps.ApiConfig',
 
     'rest_framework',
@@ -82,8 +82,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'poc_django',
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
+        'USER': 'poc',
+        'PASSWORD': 'poc',
         'HOST': 'localhost',
     }
 }
