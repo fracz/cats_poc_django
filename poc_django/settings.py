@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'static.apps.StaticConfig',
     'api.apps.ApiConfig',
+    'presenter.apps.PresenterConfig',
 
     'rest_framework',
 

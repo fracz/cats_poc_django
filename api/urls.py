@@ -9,7 +9,6 @@ router.register(r'cats', cats.CatViewSet)
 
 urlpatterns = [
     url(r'^token$', token.ObtainJWT.as_view()),
-    url(r'^cats-in-html$', cats.cats_in_html),
     url(r'^cats/random', cats.random),
     url(r'', include(router.urls)),
 ]
