@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from rest_framework import permissions
 from rest_framework import viewsets
 from rest_framework.decorators import api_view
@@ -7,11 +6,6 @@ from rest_framework.response import Response
 from api.models import Cat
 from api.serializers import CatSerializer
 from api.util import worlds_cat_database
-
-
-def cats_in_html(request):
-    cats = Cat.objects.all()
-    return render(request, 'api/cats-in-html.html', {'cats': cats})
 
 
 @api_view(['GET'])
