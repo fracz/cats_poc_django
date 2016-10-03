@@ -68,6 +68,11 @@
                             <span class="card-title grey-text text-darken-4">ID: {{ cat.id }}<i
                                     class="material-icons right">close</i></span>
                             <p>@{{ cat.creator }}, {{ cat.created | date }}</p>
+                            <a class="waves-effect waves-light btn blue right"
+                               v-on:click="edit(cat)">
+                                <i class="material-icons left">edit</i>
+                                Edytuj
+                            </a>
                             <a class="waves-effect waves-light btn red right"
                                v-on:click="delete(cat)">
                                 <i class="material-icons left">delete</i>
@@ -180,6 +185,13 @@
                 console.time('Usuwanie kota');
                 this.$http.delete('api/cats/' + cat.id, {headers: {Authorization: 'Bearer ' + this.tokenRaw}}).then(function () {
                     console.timeEnd('Usuwanie kota');
+                });
+            },
+            edit: function (cat) {
+                this.$http.patch('api/cats/' + cat.id, {url: 'http://25.media.tumblr.com/tumblr_m3icum4lQz1r6b7kmo1_500.jpg'}, {headers: {Authorization: 'Bearer ' + this.tokenRaw}}).then(function (data) {
+                    data.json().then(function (updatedCat) {
+                        cat.url = updatedCat.url;
+                    });
                 });
             }
         },
